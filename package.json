@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "compile": "babel --out-dir dist --extensions \".ts\""
+    "compile": "babel . --out-dir dist --extensions \".ts\""
   },
   "author": "",
   "license": "ISC",
