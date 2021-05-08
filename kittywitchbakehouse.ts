@@ -2,6 +2,9 @@ import createValidator, { createDetailedValidator, registerType } from "typechec
 
 const PIZZAS_IN_SLOT = 6;
 
+console.log(registerType);
+console.log(createValidator);
+
 export enum PizzaType {
     MARGARITA = "MARGARITA",
     VEGETARIAN = "VEGETARIAN",
@@ -14,11 +17,11 @@ export enum Time {
     six30 = 630
 }
 
-export interface Pizza {
+export type Pizza = {
     type: PizzaType,
     notes?: string
 }
-//registerType("Pizza");
+registerType("Pizza");
 //const isPizza = createValidator<Pizza>();
 
 

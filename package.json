@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "compile": "babel . --out-dir dist --extensions \".ts\""
+    "compile": "babel --out-dir dist --extensions \".ts\""
   },
   "author": "",
   "license": "ISC",
@@ -20,5 +20,8 @@
     "ts-jest": "^26.5.5",
     "typecheck.macro": "^0.7.2",
     "typescript": "^4.2.4"
+  },
+  "dependencies": {
+    "ts-node": "^9.1.1"
   }
 }
