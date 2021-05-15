@@ -1,28 +1,22 @@
-import createValidator, { createDetailedValidator, registerType } from "typecheck.macro";
-
 const PIZZAS_IN_SLOT = 6;
 
-console.log(registerType);
-console.log(createValidator);
 
-const PizzaType = {
-    MARGARITA: "MARGARITA",
-    VEGETARIAN: "VEGETARIAN",
-    ITALIAN: "ITALIAN",
-}
+// const PizzaType = {
+//     MARGARITA: "MARGARITA",
+//     VEGETARIAN: "VEGETARIAN",
+//     ITALIAN: "ITALIAN",
+// }
 
-const Time = {
-    five30: 530,
-    six: 600,
-    six30: 630
-}
+// const Time = {
+//     five30: 530,
+//     six: 600,
+//     six30: 630
+// }
 
 // export type Pizza = {
 //     type: PizzaType,
 //     notes?: string
 // }
-
-
 
 // export interface Order { 
 //     name: string,
@@ -33,23 +27,28 @@ const Time = {
 
 export var orders = [];
 
-export function createOrder(order){
-    if(!pizzaQuantityAvailable(order)){
+export function createOrder(name, pizzas, timeSlot){
+    if(!pizzaQuantityAvailable(pizzas, timeslot)){
         throw("why so many pizzaH")
+    }
+    const order = {
+        name,
+        pizzas,
+        timeSlot,
     }
     orders.push(order);
     return order
 }
 
-function pizzaQuantityAvailable(order) {
+function pizzaQuantityAvailable(pizzas, timeSlot) {
     const slotPizzas = orders.reduce((accumulator , ord)=>{
-        if (ord.timeSlot === order.timeSlot){
-            return accumulator + ord.pizzas.length
+        if (ord.timeSlot === timeSlot){
+            return accumulator + pizzas.length
         }
         return 0
     }, 0);
 
-    if (PIZZAS_IN_SLOT - slotPizzas < order.pizzas.length){
+    if ((PIZZAS_IN_SLOT - slotPizzas) < pizzas.length){
         return false;
     }
 
