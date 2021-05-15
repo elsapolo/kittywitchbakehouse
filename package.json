@@ -1,0 +1,31 @@
+{
+  "name": "kittywitchbakehouse",
+  "version": "1.0.0",
+  "description": "-",
+  "main": "index.js",
+  "dependencies": {
+    "babel-plugin-macros": "^3.0.1",
+    "jest": "^26.6.3",
+    "ts-jest": "^26.5.5",
+    "ts-node": "^9.1.1",
+    "typecheck.macro": "^0.7.2",
+    "typescript": "^4.2.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elsapolo/kittywitchbakehouse.git"
+  },
+  "keywords": [
+    "-"
+  ],
+  "author": "-",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elsapolo/kittywitchbakehouse/issues"
+  },
+  "homepage": "https://github.com/elsapolo/kittywitchbakehouse#readme"
+}
