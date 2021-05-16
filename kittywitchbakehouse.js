@@ -38,12 +38,11 @@ function createOrder(name, pizzas, timeSlot){
 function pizzaQuantityAvailable(pizzas, timeSlot) {
     const slotPizzas = orders.reduce((accumulator , ord)=>{
         if (ord.timeSlot === timeSlot){
-            //console.log(accumulator + pizzas.length)
-            return accumulator + pizzas.length
+            return accumulator + ord.pizzas.length
         }
         return accumulator
     }, 0);
-    console.log(slotPizzas)
+    console.log(slotPizzas);
     if ((PIZZAS_IN_SLOT - slotPizzas) < pizzas.length){
         return false;
     }
@@ -63,6 +62,5 @@ console.log(orders);
 createOrder("Oliver", ["pizza1", "pizza2"], "5:30");
 console.log(orders)
 
-console.log(pizzaQuantityAvailable(["pizza1", "pizza2"],'4:30'));
 createOrder("Elsa2", ["pizza1", "pizza2"], "4:30");
 console.log(orders)
